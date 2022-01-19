@@ -1,0 +1,30 @@
+name: MonkeMock
+on: [push, pull_request]
+jobs:
+  Test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Installing dependencies 
+        run: yarn
+      - name: Testing
+        run: yarn test
+  Lint: 
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Installing dependencies 
+        run: yarn
+      - name: Linter
+        run: yarn lint
+  Typecheck: 
+    name: Typecheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Installing dependencies 
+        run: yarn
+      - name: Typechecking
+        run: yarn typecheck
