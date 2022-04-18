@@ -1,6 +1,6 @@
 # Monke mock
 
-A fast mock data generator with a great typescript support.
+A fast mock data generator with a great typescript supportand no 3rd party dependencies.
 
 ## Introduction
 
