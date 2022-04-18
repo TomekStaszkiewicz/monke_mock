@@ -1,3 +1,5 @@
+import { ICMObject, IMockGenerator, Nested } from './types';
+
 class CMObject<T = Record<string, IMockGenerator>> implements ICMObject<T>{
     constructor(private readonly objectDefinition: T) {}
 

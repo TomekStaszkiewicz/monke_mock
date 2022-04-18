@@ -1,4 +1,4 @@
-import Mostring from '../mostring';
+import Mostring from '../src/mostring';
 
 describe('mostring', () => {
     it('generates string with default length = 10', () => {

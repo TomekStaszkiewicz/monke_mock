@@ -1,7 +1,7 @@
-import Monum from '../monum';
-import Moarray from '../moarray';
-import MObject from '../mobject';
-import Mostring from '../mostring';
+import Monum from '../src/monum';
+import Moarray from '../src/moarray';
+import MObject from '../src/mobject';
+import Mostring from '../src/mostring';
 
 describe('moarray', () => {
     it('generates array with correct length', () => {

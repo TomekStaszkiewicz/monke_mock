@@ -1,3 +1,4 @@
+import { IMockGenerator } from 'types';
 
 class CMonum implements IMockGenerator<number> {
     constructor(
