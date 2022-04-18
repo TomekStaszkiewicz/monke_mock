@@ -1,6 +1,6 @@
 import { IMockGenerator } from 'types';
 
-class CMonum implements IMockGenerator<number> {
+class CMnum implements IMockGenerator<number> {
     constructor(
         private min = 0,
         private max = 100,
@@ -8,17 +8,17 @@ class CMonum implements IMockGenerator<number> {
     ){ }
 
 
-    Min(minValue: number): CMonum {
+    Min(minValue: number): CMnum {
         this.min = minValue;
         return this;
     }
 
-    Max(maxValue: number): CMonum {
+    Max(maxValue: number): CMnum {
         this.max = maxValue;
         return this;
     }
 
-    IsInt(isInt: boolean): CMonum {
+    IsInt(isInt: boolean): CMnum {
         this.isInteger = isInt;
         return this;
     }
@@ -35,5 +35,5 @@ class CMonum implements IMockGenerator<number> {
 }
 
 export default function() {
-    return new CMonum();
+    return new CMnum();
 }

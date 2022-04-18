@@ -20,6 +20,6 @@ export class ExampleObjectGenerator implements IMockGenerator<Array<{a: number; 
             {a: 10, b: 'Ten'},
             {a: 1, b: 'One'},
             {a: 20, b: 'Twenty'}
-        ]
+        ];
     }
 }
