@@ -1,12 +1,12 @@
-import { IMockGenerator, ICMoarray, Arried } from 'types';
+import { IMockGenerator, ICMarray, Arried } from 'types';
 
-class CMoarray<T extends IMockGenerator> implements ICMoarray<T> {
+class CMarray<T extends IMockGenerator> implements ICMarray<T> {
     private length = 10;
     constructor(
         private readonly objectDefinition: T
     ){}
 
-    Length(newL: number): CMoarray<T> {
+    Length(newL: number): CMarray<T> {
         this.length = newL;
         return this;
     }
@@ -20,6 +20,6 @@ class CMoarray<T extends IMockGenerator> implements ICMoarray<T> {
     }
 }
 
-export default function<T extends IMockGenerator>(objectDefinition: T): CMoarray<T> {
-    return new CMoarray<T>(objectDefinition)
+export default function<T extends IMockGenerator>(objectDefinition: T): CMarray<T> {
+    return new CMarray<T>(objectDefinition);
 }

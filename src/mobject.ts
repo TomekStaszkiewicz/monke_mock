@@ -1,6 +1,6 @@
-import { ICMObject, IMockGenerator, Nested } from './types';
+import { ICMobject, IMockGenerator, Nested } from './types';
 
-class CMObject<T = Record<string, IMockGenerator>> implements ICMObject<T>{
+class CMobject<T = Record<string, IMockGenerator>> implements ICMobject<T>{
     constructor(private readonly objectDefinition: T) {}
 
     generate(): Nested<T> {
@@ -9,13 +9,13 @@ class CMObject<T = Record<string, IMockGenerator>> implements ICMObject<T>{
         const res = oKeys.reduce((acc, curr) => {
                 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                 //@ts-ignore
-                return {...acc, [curr]: this.objectDefinition[curr].generate()} 
+                return {...acc, [curr]: this.objectDefinition[curr].generate()}; 
         }, {} as Nested<T>);
 
         return res;
     }
 }
 
-export default function MObject<T = Record<string, IMockGenerator>>(objectDefinition: T): CMObject<T> {
-    return new CMObject<T>(objectDefinition)
+export default function MObject<T = Record<string, IMockGenerator>>(objectDefinition: T): CMobject<T> {
+    return new CMobject<T>(objectDefinition);
 }

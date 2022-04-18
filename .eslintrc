@@ -10,6 +10,9 @@
       "plugin:@typescript-eslint/recommended"
     ],
     "rules": {
-        "quotes": ["error", "single"]
+        "quotes": ["error", "single"],
+        "space-in-parens": ["error", "never"],
+        "no-multiple-empty-lines": "error",
+        "semi": ["error", "always"]
     }
   }

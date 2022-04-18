@@ -3,13 +3,13 @@ import { IMockGenerator } from 'types';
 const alpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
 const numeric = '0123456789';
 
-class CMostring implements IMockGenerator<string> {
+class CMstring implements IMockGenerator<string> {
     constructor(
         private length = 10,
         private useNumbers = false
     ) {}
 
-    Length(l: number): CMostring {
+    Length(l: number): CMstring {
         if(l <= 0) {
             throw new Error('String length must be a positive number!');
         }
@@ -17,7 +17,7 @@ class CMostring implements IMockGenerator<string> {
         return this;
     }
 
-    UseNumbers(shouldUse: boolean): CMostring {
+    UseNumbers(shouldUse: boolean): CMstring {
         this.useNumbers = shouldUse;
         return this;
     }
@@ -26,11 +26,11 @@ class CMostring implements IMockGenerator<string> {
         const chars = this.useNumbers ? alpha + numeric : alpha;
         const result = Array(this.length).fill(0).reduce((acc) => {
             return acc + chars.charAt(Math.floor(Math.random()*chars.length));
-        }, '')
+        }, '');
         return result;
     }
 }
 
 export default function() {
-    return new CMostring();
+    return new CMstring();
 }

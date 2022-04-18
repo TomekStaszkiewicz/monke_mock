@@ -4,7 +4,7 @@ import MOdate from '../src/modate';
 describe('modate', () => {
     it('generates some date', () => {
         const res = MOdate().generate();
-        expect(res).toBeInstanceOf(Date)
+        expect(res).toBeInstanceOf(Date);
     });
 
     it.each([

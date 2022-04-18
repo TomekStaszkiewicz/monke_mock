@@ -1,20 +1,20 @@
-import MObject  from './mobject'
-import MOnum from './monum'
-import MOstring from './mostring'
-import MOarray from './moarray'
-import MOdate from './modate';
-import MOcustom from './mocustom';
+import Mobject  from './mobject';
+import Mnum from './mnum';
+import Mstring from './mstring';
+import Marray from './marray';
+import Mdate from './modate';
+import Mcustom from './mocustom';
 
-import {IMockGenerator, ICMObject, Nested} from './types';
+import {IMockGenerator, ICMobject, Nested} from './types';
 
 export {
-    MOstring,
-    MObject,
-    MOnum,
-    MOarray,
-    MOdate,
-    MOcustom,
+    Mstring,
+    Mobject,
+    Mnum,
+    Marray,
+    Mdate,
+    Mcustom,
     IMockGenerator,
-    ICMObject, 
+    ICMobject as ICMObject, 
     Nested
-}
+};

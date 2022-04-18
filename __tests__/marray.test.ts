@@ -1,17 +1,14 @@
-import Monum from '../src/monum';
-import Moarray from '../src/moarray';
-import MObject from '../src/mobject';
-import Mostring from '../src/mostring';
+import {Mnum, Marray, Mobject, Mstring} from '../src';
 
 describe('moarray', () => {
     it('generates array with correct length', () => {
-        const res = Moarray(Monum()).generate();
-        expect(res).toHaveLength(10)
+        const res = Marray(Mnum()).generate();
+        expect(res).toHaveLength(10);
     });
     it('generates array of objects', () => {
-        const res = Moarray(MObject({
-            x: Monum(),
-            y: Mostring()
+        const res = Marray(Mobject({
+            x: Mnum(),
+            y: Mstring()
         })).generate();
 
         expect(res).toHaveLength(10);
