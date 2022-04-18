@@ -23,3 +23,5 @@ export class ExampleObjectGenerator implements IMockGenerator<Array<{a: number; 
         ];
     }
 }
+
+export class BrokenGenerator {}

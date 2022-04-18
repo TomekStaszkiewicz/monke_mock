@@ -1,6 +1,7 @@
-import { IMockGenerator, ICMarray, Arried } from 'types';
+import { ICMarray, Arried } from 'types';
+import {isGenerator} from './utils';
 
-class CMarray<T extends IMockGenerator> implements ICMarray<T> {
+class CMarray<T> implements ICMarray<T> {
     private length = 10;
     constructor(
         private readonly objectDefinition: T
@@ -13,13 +14,16 @@ class CMarray<T extends IMockGenerator> implements ICMarray<T> {
     
     generate(): Arried<T>[] {
         const res = Array(this.length).fill(0).map(() => {
-            return this.objectDefinition.generate();
+            if(isGenerator(this.objectDefinition)){
+                return this.objectDefinition.generate();
+            }
+            return this.objectDefinition;
         });
         
         return res;
     }
 }
 
-export default function<T extends IMockGenerator>(objectDefinition: T): CMarray<T> {
+export default function<T>(objectDefinition: T): CMarray<T> {
     return new CMarray<T>(objectDefinition);
 }

@@ -1,4 +1,4 @@
-import {Mobject, Mnum} from '../src';
+import {Mobject, Mnum, Mstring} from '../src';
 
 describe('MObject', () => {
     it('correctly parses object with one key', () => {
@@ -30,5 +30,32 @@ describe('MObject', () => {
 
         expect(typeof res.i.walked.the.lonely.road).toEqual('number');
         expect(res.anotherObject).toEqual({});
+    });
+
+    it('correctly parses shape with exact values passed', () => {
+        const res = Mobject({ 
+            aNumber: 10,
+            aString: Mstring(),
+            anObject: Mobject({
+                anotherNumber: Mnum(),
+                aString: 'Some string value'
+            }),
+            fixedObject: {
+                a: 10,
+                b: 'ten'
+            },
+            fixedArray: [1, 5, 3, 1],
+            aNull: null,
+            anUndefined: undefined
+        }).generate();
+
+        expect(res.aNumber).toEqual(10);
+        expect(typeof res.aString).toEqual('string');
+        expect(typeof res.anObject.anotherNumber).toEqual('number');
+        expect(res.anObject.aString).toEqual('Some string value');
+        expect(res.fixedObject).toEqual({ a: 10, b: 'ten'});
+        expect(res.fixedArray).toEqual([1, 5, 3, 1]);
+        expect(res.aNull).toBeNull();
+        expect(res.anUndefined).toBeUndefined();
     });
 });
