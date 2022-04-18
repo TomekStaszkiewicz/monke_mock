@@ -14,7 +14,9 @@ describe('Monum', () => {
         [1, 10],
         [2, 1000],
         [-5, 300],
-        [21, 37]
+        [21, 37],
+        [-10, -3],
+        [-10, 10]
     ])('generates random number in range %p - %p by default', (p, q) => {
         const n = Mnum().Min(p).Max(q).generate();
 
