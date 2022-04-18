@@ -1,5 +1,5 @@
-import {Mcustom, Mobject, Marray} from '../src';
-import {ExampleObjectGenerator, NameGenerator, NameWithCstrParamsGenerator} from './testHelpers/exampleCustomGenerators';
+import {Mcustom, Mobject, Marray, IMockGenerator} from '../src';
+import {BrokenGenerator, ExampleObjectGenerator, NameGenerator, NameWithCstrParamsGenerator} from './testHelpers/exampleCustomGenerators';
 
 
 describe('mocustom', () => {
@@ -39,5 +39,9 @@ describe('mocustom', () => {
         for(const singleObject of data){
             expect(singleObject.name).toEqual('Tomek');
         }
+    });
+
+    it('throws error when wrong class passed', () => {
+        expect(() => Mcustom(BrokenGenerator as unknown as {new(): IMockGenerator})).toThrow();
     });
 });
