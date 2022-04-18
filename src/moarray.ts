@@ -1,3 +1,5 @@
+import { IMockGenerator, ICMoarray, Arried } from 'types';
+
 class CMoarray<T extends IMockGenerator> implements ICMoarray<T> {
     private length = 10;
     constructor(

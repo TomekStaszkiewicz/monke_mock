@@ -1,5 +1,5 @@
-import MObject from '../mobject';
-import Monum from '../monum';
+import MObject from '../src/mobject';
+import Monum from '../src/monum';
 
 describe('MObject', () => {
     it('correctly parses object with one key', () => {

@@ -1,3 +1,5 @@
+import { IMockGenerator } from 'types';
+
 const alpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
 const numeric = '0123456789';
 
