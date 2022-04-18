@@ -1,4 +1,5 @@
-import { IMockGenerator } from 'types';
+import { IMockGenerator } from './types';
+import { generateRandom } from './utils';
 
 class CMnum implements IMockGenerator<number> {
     constructor(
@@ -27,8 +28,8 @@ class CMnum implements IMockGenerator<number> {
         if(this.max <= this.min){
             throw new Error('Max value must be bigger than min value');
         }
-        const delta = this.max - this.min;
-        const num = this.min + Math.random() * (delta);
+        
+        const num = generateRandom(this.min, this.max);
         if(this.isInteger) return Math.floor(num);
         return num;
     }
