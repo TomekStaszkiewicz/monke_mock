@@ -1,15 +1,16 @@
 {
   "name": "monke-mock",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
     "test": "jest",
     "lint": "eslint ./src --ext .ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "build": "tsc -p tsconfig.build.json"
   },
   "files": [
-    "src/*"
+    "dist"
   ],
   "devDependencies": {
     "@types/jest": "^27.4.0",
