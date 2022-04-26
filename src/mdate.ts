@@ -44,7 +44,7 @@ class CMDate implements IMockGenerator{
     generate(): Date {
         const start = this.minDate.getTime();
         const end = this.maxDate.getTime();
-        const newT = generateRandom(start, end);
+        const newT = generateRandom(start, end, true);
        
         const d = new Date(newT);
         if(this.year !== null){
