@@ -2,7 +2,7 @@ import Mobject  from './mobject';
 import Mnum from './mnum';
 import Mstring from './mstring';
 import Marray from './marray';
-import Mdate from './modate';
+import Mdate from './mdate';
 import Mcustom from './mocustom';
 
 import {IMockGenerator, ICMobject, Nested} from './types';
