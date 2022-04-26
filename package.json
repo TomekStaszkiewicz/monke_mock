@@ -1,8 +1,21 @@
 {
   "name": "monke-mock",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "license": "MIT",
+  "keywords": [
+    "mock",
+    "mocking",
+    "generator",
+    "sample",
+    "data"
+  ],
+  "description": "Simple and fast mock data generator with great TS support",
+  "author": "Tomasz Staszkiewicz <staszkiewicztoma@gmail.com>",
+  "repository": {
+    "url": "https://github.com/TomekStaszkiewicz/monke_mock",
+    "type": "git"
+  },
   "scripts": {
     "test": "jest",
     "lint": "eslint ./src --ext .ts",
