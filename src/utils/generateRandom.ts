@@ -1,4 +1,8 @@
-export function generateRandom(min: number, max: number): number {
+export function generateRandom(min: number, max: number, isInt = false): number {
     const delta = max - min;
-    return min + Math.floor(Math.random() * (delta));
+    let interval = Math.random() * (delta);
+    if(isInt){
+        interval = Math.floor(interval);
+    }
+    return min + interval;
 }

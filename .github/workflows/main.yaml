@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Installing dependencies 
-        run: yarn
+        run: yarn install --frozen-lockfile
       - name: Testing
         run: yarn test
   Lint: 
@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Installing dependencies 
-        run: yarn
+        run: yarn install --frozen-lockfile
       - name: Linter
         run: yarn lint
   Typecheck: 
@@ -25,6 +25,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Installing dependencies 
-        run: yarn
+        run: yarn install --frozen-lockfile
       - name: Typechecking
         run: yarn typecheck

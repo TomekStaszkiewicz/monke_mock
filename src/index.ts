@@ -5,7 +5,7 @@ import Marray from './marray';
 import Mdate from './mdate';
 import Mcustom from './mocustom';
 
-import {IMockGenerator, ICMobject, Nested} from './types';
+import {IMockGenerator, ICMobject, Nested} from './monkeMockTypes';
 
 export {
     Mstring,

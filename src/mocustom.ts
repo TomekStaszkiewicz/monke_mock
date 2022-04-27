@@ -1,4 +1,4 @@
-import { IMockGenerator } from 'types';
+import { IMockGenerator } from './monkeMockTypes';
 
 
 export default function<T extends IMockGenerator>(GeneratorClass: {new(...args: any[]): T}, ...args: any[]) {
