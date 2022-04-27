@@ -1,4 +1,4 @@
-import { IMockGenerator } from '../../src/types';
+import { IMockGenerator } from '../../src/monkeMockTypes';
 
 export class NameGenerator implements IMockGenerator<string> {
     generate(): string {

@@ -1,7 +1,7 @@
 import { isGenerator } from './utils';
-import { ICMobject, IMockGenerator, Nested } from './types';
+import { ICMobject, IMockGenerator, Nested } from './monkeMockTypes';
 
-class CMobject<T = Record<string, IMockGenerator>> implements ICMobject<T>{
+class CMobject<T = Record<string, any>> implements ICMobject<T>{
     constructor(private readonly objectDefinition: T) {}
 
     generate(): Nested<T> {

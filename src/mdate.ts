@@ -1,4 +1,4 @@
-import { IMockGenerator } from './types';
+import { IMockGenerator } from './monkeMockTypes';
 import { convertDate, generateRandom, isInRange } from './utils';
 
 class CMDate implements IMockGenerator{

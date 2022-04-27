@@ -1,4 +1,4 @@
-import {Mobject, Mnum, Mstring} from '../src';
+import {Mobject, Mnum, Mstring, Marray} from '../src';
 
 describe('MObject', () => {
     it('correctly parses object with one key', () => {
@@ -57,5 +57,15 @@ describe('MObject', () => {
         expect(res.fixedArray).toEqual([1, 5, 3, 1]);
         expect(res.aNull).toBeNull();
         expect(res.anUndefined).toBeUndefined();
+    });
+
+    it('correctly parses object with array inside', () => {
+        const res = Mobject({
+            someArr: Marray(Mnum())
+        }).generate();
+
+        for(const val of res.someArr){
+            expect(typeof val).toEqual('number');
+        }
     });
 });

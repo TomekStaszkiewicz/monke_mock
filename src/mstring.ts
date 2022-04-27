@@ -1,4 +1,4 @@
-import { IMockGenerator } from 'types';
+import { IMockGenerator } from './monkeMockTypes';
 
 const alpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
 const numeric = '0123456789';

@@ -1,4 +1,4 @@
-import { IMockGenerator } from './types';
+import { IMockGenerator } from './monkeMockTypes';
 import { generateRandom } from './utils';
 
 class CMnum implements IMockGenerator<number> {

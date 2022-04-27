@@ -1,4 +1,4 @@
-import { ICMarray, Arried } from 'types';
+import { ICMarray, Arried } from './monkeMockTypes';
 import {isGenerator} from './utils';
 
 class CMarray<T> implements ICMarray<T> {
