@@ -18,6 +18,6 @@ class CMobject<T = Record<string, any>> implements ICMobject<T>{
     }
 }
 
-export default function MObject<T = Record<string, IMockGenerator>>(objectDefinition: T): CMobject<T> {
+export default function MObject<T extends Record<string, any>>(objectDefinition: T): CMobject<T> {
     return new CMobject<T>(objectDefinition);
 }
