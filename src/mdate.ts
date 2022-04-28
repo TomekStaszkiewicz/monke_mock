@@ -47,14 +47,14 @@ class CMDate implements IMockGenerator{
         const newT = generateRandom(start, end, true);
        
         const d = new Date(newT);
-        if(this.year !== null){
-            d.setFullYear(this.year);
+        if(this.day !== null){
+            d.setDate(this.day);
         }
         if(this.month !== null){
             d.setMonth(this.month);
         }
-        if(this.day !== null){
-            d.setDate(this.day);
+        if(this.year !== null){
+            d.setFullYear(this.year);
         }
         return d;
     }
