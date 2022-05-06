@@ -57,4 +57,22 @@ describe('mdate', () => {
         expect(res.getMonth()).toEqual(monthNo);
         expect(res.getDate()).toEqual(dayNo);
     });
+
+    it('throws proper error when trying to set month out of range', () => {
+        expect(() => Mdate().Month(13)).toThrow('Month not in range 0-11. Provided month number: 13');
+    });
+
+
+    it('throws proper error when trying to set day out of range', () => {
+        expect(() => Mdate().Day(33)).toThrow('Day not in range 1-31. Provided day number: 33');
+    });
+
+
+    it('throws proper error when trying to set day out of range for given month', () => {
+        expect(() => Mdate().Year(2012).Month(1).Day(30).generate()).toThrow('Wrong value of days for given month');
+        expect(() => Mdate().Year(2012).Month(1).Day(29).generate()).not.toThrow('Wrong value of days for given month');
+    
+        expect(() => Mdate().Year(2011).Month(1).Day(30).generate()).toThrow('Wrong value of days for given month');
+        expect(() => Mdate().Year(2011).Month(1).Day(29).generate()).toThrow('Wrong value of days for given month');  
+    });
 });
