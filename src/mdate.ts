@@ -1,22 +1,6 @@
 import { IMockGenerator } from './monkeMockTypes';
-import { convertDate, generateRandom, isInRange } from './utils';
-const leapMonthDays = [31,29,31,30,31,30,31,31,30,31,30,31];
+import { convertDate, generateRandom, generateRandomDay, isInRange, isLeapYear, leapMonthDays, nonLeapMonthDays } from './utils';
 
-const nonLeapMonthDays = [31,28,31,30,31,30,31,31,30,31,30,31];
-
-function isLeapYear(year: number) {
-    return ((year%4)===0 && !((year%100) === 0)) || (year%400) === 0;
-}
-
-export function generateRandomDay(month: number, year: number){
-    const isLeap = isLeapYear(year);
-
-    if(isLeap){
-        return generateRandom(1, leapMonthDays[month], true);
-    }
-
-    return generateRandom(1, nonLeapMonthDays[month], true);
-}
 class CMDate implements IMockGenerator{
     constructor(
         private minDate = new Date(2001, 0, 1),
@@ -37,9 +21,10 @@ class CMDate implements IMockGenerator{
     }
 
     Day(dayNo: number): CMDate {
-        if(!isInRange(dayNo, 0, 31)) {
+        if(!isInRange(dayNo, 1, 31)) {
             throw new Error(`Day not in range 1-31. Provided day number: ${dayNo}`);
-        }        this.day = dayNo;
+        }        
+        this.day = dayNo;
         return this;
     }
 
@@ -59,16 +44,11 @@ class CMDate implements IMockGenerator{
     generate(): Date {
         const year = this.year !== null ? this.year : generateRandom(this.minDate.getFullYear(), this.maxDate.getFullYear(), true);
         const month = this.month !== null ? this.month : generateRandom(0, 12, true);
-        if(this.day !== null && this.month !== null) {
-            if(this.year !== null && isLeapYear(this.year)) {
-                if(leapMonthDays[this.month] > this.day){
+        if(this.day !== null && this.month !== null && this.year !== null) {
+                const dataSet = isLeapYear(this.year) ? leapMonthDays : nonLeapMonthDays;
+                if(dataSet[this.month] < this.day){
                     throw new Error('Wrong value of days for given month');
                 }
-            } else if(this.year === null) {
-                if(nonLeapMonthDays[this.month] > this.day){
-                    throw new Error('Wrong value of days for given month');
-                }
-            }
         }
         const day = this.day !== null ? this.day : generateRandomDay(month, year);
         return new Date(`${month+1}.${day}.${year}`);
