@@ -1,10 +1,30 @@
 # Monke mock
 
-A fast mock data generator with a great typescript supportand no 3rd party dependencies.
+A fast mock data generator with a great typescript support and no 3rd party dependencies.
 
 ## Introduction
 
 I could not find any cool package for quickly creating a mock schema of objects and arrays for my unit tests or just to populate site with random data. That is why I decided to create my own version of it. 
+
+
+## Benefits of using monke-mock
+
+While `faker.js` provides an excellent generator for data like emails, names, etc. it is not suitable for generating developer-defined shapes of data. Let's say that you want to have an array of objects for testing purposes. While it is possible, but not straightforward to accomplish using the `faker.js`, it is extremely easy with `monke-mock`.
+
+Faker way:
+```typescript
+const arr = [];
+for(let i = 0; i < 100; i++){
+    arr.push({
+        x: faker.datatype.number()
+    });
+}
+```
+
+Monke-mock way:
+```typescript
+const data = Marray(MObject({x: Mnum()})).Length(100).generate();
+```
 
 ## Getting started
 
