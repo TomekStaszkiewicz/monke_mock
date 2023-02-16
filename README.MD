@@ -100,7 +100,7 @@ const x = Mobject({fixedKey: 1, someRandomString: Mstring()}).generate();
 import { Mhex } from 'monke-mock';
 
 const x = Mhex().Length(40).generate();
-`
+```
 
 ### Creating a custom generator
 
