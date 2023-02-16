@@ -42,14 +42,16 @@ Currently `monke-mock` supports following data types:
 * object - `Mobject`
 * array - `Marray`
 * Date - `Mdate`
+* Hex - `Mhex`
 
 | Data type | Function | Available modifiers|
 |-----------|----------|--------------------|
-| number    | Mnum    | Max(), Min(), IsInt()|
-| string    | Mstring | Length(), UseNumbers()|
-| date      | Mdate   | Max(), Min()|
+| number    | Mnum     | Max(), Min(), IsInt()|
+| string    | Mstring  | Length(), UseNumbers()|
+| date      | Mdate    | Max(), Min()|
 | object    | Mobject  | |
-| array     | Marray  | Length() |
+| array     | Marray   | Length() |
+| hex       | Mhex     | Length() |
 
 ## Examples
 
@@ -92,10 +94,20 @@ import { Mobject, Mstring } from 'monke-mock';
 const x = Mobject({fixedKey: 1, someRandomString: Mstring()}).generate();
 ```
 
+### Generating a ethereum address(hex value with 40)
+
+```typescript
+import { Mhex } from 'monke-mock';
+
+const x = Mhex().Length(40).generate();
+`
+
 ### Creating a custom generator
 
 ```typescript
 import { Mcustom, Marray, IMockGenerator } from 'monke-mock';
+
+
 
 
 // First define a class that implements the IMockGenerator
